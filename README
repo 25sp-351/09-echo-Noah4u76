@@ -1,0 +1,45 @@
+# Modular TCP Echo Server
+
+To build the server, simply run:
+
+```bash
+make
+```
+
+This will compile the server and create an executable called `echo_server`.
+
+## Running
+
+To run the server with default settings:
+
+```bash
+./echo_server
+```
+
+To specify a port and enable verbose mode:
+
+```bash
+./echo_server -p 8080 -v
+```
+
+## Testing
+
+You can test the server with telnet:
+
+```bash
+telnet localhost 2345
+```
+
+Then type messages and press Enter. You should see each line echoed back.
+
+## Clean Up
+
+To clean up the compiled files:
+
+```bash
+make clean
+```
+
+## Problems
+
+I am not handling ctrl+c to close out the connection properly so it doesnt work. Im thinking I might have to timeout the socket for it to potentially check for a shutdown. Im not sure yet. I was researching into it.
